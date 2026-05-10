@@ -1,0 +1,248 @@
+/* =========================================
+   1. GLOBAL & BACKGROUND POLA TITIK
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    /* Efek Pola Titik (Dotted Background) */
+    background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+    background-size: 25px 25px;
+    color: #333;
+    margin: 0;
+    padding: 20px; 
+}
+
+h2 { 
+    color: #2d6a4f; 
+}
+
+/* =========================================
+   2. NAVBAR CUSTOM (PILL-SHAPE) - UPDATED
+   ========================================= */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 60px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 1200px;
+    
+    /* Tambahkan Kode di Bawah Ini */
+    position: sticky;      /* Membuat navbar menempel */
+    top: 20px;            /* Memberikan jarak dari atas layar saat melayang */
+    z-index: 1000;         /* Memastikan navbar di atas elemen lain */
+    margin: 0 auto 20px;   /* Margin otomatis ke tengah dan jarak bawah */
+}
+
+.nav-logo img {
+    height: 40px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #4a5568; 
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ed8805; /* Warna hover menyesuaikan tema HeyaCamp */
+}
+
+.nav-links li a i {
+    font-size: 18px;
+}
+
+.text-stack {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* =========================================
+   3. HEADER TEKS (HEYACAMP INDONESIA)
+   ========================================= */
+.header-heya {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.logo-text {
+    font-size: 4.5rem; 
+    font-weight: 900; 
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -2px; 
+}
+
+.logo-text .heya {
+    color: #1e293b; /* Warna navy/hitam pekat */
+}
+
+.logo-text .camp {
+    color: #ed8805; /* Warna oranye terang HeyaCamp */
+}
+
+.subtitle {
+    color: #334155;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 5px 0 15px 0;
+}
+
+.tags {
+    color: #64748b;
+    font-size: 1.1rem;
+    font-weight: 600;
+    word-spacing: 10px; 
+}
+
+/* =========================================
+   4. GALERI BISA DIGESER (HORIZONTAL SCROLL)
+   ========================================= */
+.gallery-section {
+    width: 100%;
+    overflow: hidden; 
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px; 
+    padding: 20px;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    
+    /* Menyembunyikan scrollbar bawaan */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none; 
+}
+
+.gallery-card {
+    flex: 0 0 auto; 
+    width: 260px; 
+    height: 380px; 
+    border-radius: 15px;
+    overflow: hidden;
+    scroll-snap-align: center; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    background-color: white; 
+}
+
+/* Gambar sedikit miring seperti di contoh Anda */
+.gallery-card:nth-child(odd) { transform: rotate(-2deg); }
+.gallery-card:nth-child(even) { transform: rotate(2deg); }
+
+.gallery-card:hover {
+    transform: rotate(0deg) scale(1.05) translateY(-10px);
+    z-index: 10;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* =========================================
+   5. KOMPONEN LAINNYA (KATALOG & TABEL BOOKING)
+   ========================================= */
+.container { 
+    max-width: 900px; 
+    margin: 20px auto; 
+    padding: 20px; 
+}
+
+.card { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 20px; 
+}
+
+.item { 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    padding: 10px; 
+    text-align: center; 
+    background: #fff; 
+}
+
+.item img { 
+    width: 100%; 
+    border-radius: 5px; 
+    height: 150px; 
+    object-fit: cover; 
+}
+
+.btn { 
+    background: #2d6a4f; 
+    color: white; 
+    border: none; 
+    padding: 8px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    width: 100%; 
+    margin-top: 10px; 
+    font-size: 0.9rem; 
+}
+
+.counter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.btn-qty {
+    background: #eee;
+    border: 1px solid #ccc;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-qty:hover { background: #2d6a4f; color: white; }
+.qty-val { font-weight: bold; font-size: 1.1rem; min-width: 20px; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+th { background: #2d6a4f; color: white; }
+.status { padding: 5px 10px; border-radius: 20px; font-size: 12px; background: #ffeaa7; }

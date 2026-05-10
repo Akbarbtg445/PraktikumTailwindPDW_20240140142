@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Katalog Alat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../ui/coba.css">
+</head>
+<body>
+    <nav class="navbar">
+        <!-- 1. Bagian Logo -->
+        <div class="nav-logo">
+            <!-- Ganti src dengan link logo Anda -->
+            <img src="https://i.pinimg.com/736x/63/f7/b9/63f7b9e05066366fc3a65f4c3ae9eebd.jpg" alt="Logo">
+        </div>
+        <!-- 2. Bagian Menu Tengah -->
+        <ul class="nav-links">
+            <li><a href="/ui/index.html"><i class="fa-solid fa-house"></i> Beranda</a></li>
+            <li><a href="/pages/katalog.html"><i class="fa-solid fa-campground"></i>Sewa Alat</a></li>
+            <li><a href="/pages/boking.html"><i class="fa-solid fa-mountain"></i> Alat Yang Sedang Disewa</a></li>
+            <li><a href="/pages//lokasi.html"><i class="fa-solid fa-map-location-dot"></i>Lokasi</a></li>
+            <li><a href="/pages//cara sewa.html"><i class="fa-solid fa-book-open"></i>Cara Sewa</a></li>
+            <li><a href="#"><i class="fa-solid fa-mountain"></i> Aktivitas</a></li>
+            <li><a href="#"><i class="fa-regular fa-user"></i> Komunitas</a></li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-tent"></i> 
+                    <span class="text-stack"><span>Camp</span><span>Area</span></span>
+                </a>
+            </li>
+            <li><a href="#"><i class="fa-regular fa-calendar"></i> Acara</a></li>
+            <li><a href="#"><i class="fa-regular fa-circle-play"></i> Nonton</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Pilih Alat Outdoor</h2>
+        
+        <!-- Area Katalog -->
+        <div class="grid" id="katalogList"></div>
+
+        <!-- Form Data Diri & Konfirmasi -->
+        <div class="card" style="margin-top: 30px;">
+            <h3>Data Penyewa</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <label>Nama Lengkap</label>
+                <input type="text" id="namaPenyewa" placeholder="Masukkan nama Anda..." style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            
+            <!-- Tambahan Input No HP -->
+            <div style="margin-bottom: 15px;">
+                <label>Nomor HP (WhatsApp)</label>
+                <input type="tel" id="hpPenyewa" placeholder="Contoh: 08123456789" style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+
+            <!-- Tambahan Input Tanggal Sewa -->
+            <div style="margin-bottom: 15px;">
+                <label>Tanggal Sewa</label>
+                <input type="date" id="tglSewa" style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label>Alamat</label>
+                <textarea id="alamatPenyewa" placeholder="Masukkan alamat lengkap..." style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ddd; border-radius: 5px; height: 80px;"></textarea>
+            </div>
+            
+            <button class="btn" style="background: #1e5631; font-size: 1.1rem;" onclick="prosesSewaSemua()">Sewa Sekarang (Semua Item)</button>
+        </div>
+    </div>
+    <script src="../logic/script.js"></script>
+</body>
+</html>

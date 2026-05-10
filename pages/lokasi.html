@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heya Camp Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/pages/lokasi.css">
+</head>
+<body>
+<nav class="navbar">
+        <!-- 1. Bagian Logo -->
+        <div class="nav-logo">
+            <!-- Ganti src dengan link logo Anda -->
+            <img src="https://i.pinimg.com/736x/63/f7/b9/63f7b9e05066366fc3a65f4c3ae9eebd.jpg" alt="Logo">
+        </div>
+        <!-- 2. Bagian Menu Tengah -->
+        <ul class="nav-links">
+            <li><a href="/ui/index.html"><i class="fa-solid fa-house"></i> Beranda</a></li>
+            <li><a href="/pages/katalog.html"><i class="fa-solid fa-campground"></i>Sewa Alat</a></li>
+            <li><a href="/pages/boking.html"><i class="fa-solid fa-mountain"></i>Alat Yang Sedang Disewa</a></li>
+            <li><a href="/pages//lokasi.html"><i class="fa-solid fa-map-location-dot"></i>Lokasi</a></li>
+            <li><a href="/pages//cara sewa.html"><i class="fa-solid fa-book-open"></i>Cara Sewa</a></li>
+            <li><a href="#"><i class="fa-regular fa-user"></i> Komunitas</a></li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-tent"></i> 
+                    <span class="text-stack"><span>Camp</span><span>Area</span></span>
+                </a>
+            </li>
+            <li><a href="#"><i class="fa-regular fa-calendar"></i> Acara</a></li>
+            <li><a href="#"><i class="fa-regular fa-circle-play"></i> Nonton</a></li>
+        </ul>
+
+    </nav>
+<section class="container">
+    <div class="content-wrapper">
+        <!-- Bagian Teks -->
+        <div class="text-section">
+            <h1>Lokasi <span class="highlight">Heya Camp?</span></h1>
+            <p>
+                Heya Camp Berlokasi di Gg Cempaka, Desa Bandar, Kec. Bandar, Kabupaten Batang, Jawa Tengah 51254.
+            </p>
+        </div>
+
+        <!-- Bagian Maps Slider -->
+        <div class="image-section">
+            <div class="slider-container" id="maps-slider">
+                <div class="slider-track" id="slider-track">
+                    <!-- Slide 1: Lokasi Utama -->
+                    <div class="slide">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.823327757563!2d109.79656695757778!3d-7.03004179023393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70170b78f793c3%3A0x2c8c3509d179750f!2sPerentalan%20Alat%20Outdoor%20Heya%20Camp!5e0!3m2!1sid!2sid!4v1777998387076!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <!-- Slide 2: Contoh Lokasi Lain (Opsional) -->
+                    <div class="slide">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1778000706914!6m8!1m7!1ss5HSsAjszIyiUbAMa03oyw!2m2!1d-7.029648387723042!2d109.796889807507!3f190.53148349973702!4f-0.21839462116672337!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!-- Tombol Navigasi -->
+                <button class="nav-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="nav-btn next" onclick="moveSlide(1)">&#10095;</button>
+
+                <div class="dots-container">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tambahkan Script di akhir body -->
+<script>
+    let currentIndex = 0;
+    const track = document.getElementById('slider-track');
+    const dots = document.querySelectorAll('.dot');
+
+    function moveSlide(direction) {
+        const slides = document.querySelectorAll('.slide');
+        currentIndex = (currentIndex + direction + slides.length) % slides.length;
+        updateSlider();
+    }
+
+    function currentSlide(index) {
+        currentIndex = index;
+        updateSlider();
+    }
+
+    function updateSlider() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+</script>
+
+</body>
+</html>

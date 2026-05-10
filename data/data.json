@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "nama": "Tenda Baseway Pavilo",
+    "keterangan":"Double layer, Kapasitas 4 orang, Frame Aloy",
+    "harga": 35000,
+    "gambar": "https://akbarbtg445.github.io/Alat-yang-disewakan/Tenda%20Pavilo.png"
+  },
+  {
+    "id": 2,
+    "nama": "Tenda WildShell JayaDipa",
+    "keterangan":"Double layer, Kapasitas 4 orang, Frame Aloy",
+    "harga": 35000,
+    "gambar": "https://akbarbtg445.github.io/Alat-yang-disewakan/tenda%20wild%20shel.png"
+  },
+  {
+    "id": 3,
+    "nama": "Tenda",
+    "keterangan":"Single layer, Kapasitas 4 orang, Frame Aloy",
+    "harga": 20000,
+    "gambar": "https://akbarbtg445.github.io/Alat-yang-disewakan/tenda%20single%20layer.jpg"
+  },
+   {
+    "id": 4,
+    "nama": "Cerier Consina Terabi",
+    "keterangan":"Kapasitas 60Liter, Include Raincover",
+    "harga": 20000,
+    "gambar": "https://akbarbtg445.github.io/Alat-yang-disewakan/terabi.jpg"
+  },
+   {
+    "id": 5,
+    "nama": "Cerier Antarestar Ranger",
+    "keterangan":"Kapasitas 65Liter, Include Raincover",
+    "harga": 20000,
+    "gambar": "https://akbarbtg445.github.io/Alat-yang-disewakan/Antarestar1.png"
+  },
+    {
+    "id": 6,
+    "nama": "Cerier CO-TREX TENGGARONG",
+    "keterangan":"Kapasitas 60Liter, Include Raincover",
+    "harga": 20000,
+    "gambar": "https://akbarbtg445.github.io/Alat-yang-disewakan/Syaratketentuan.png"
+  },
+   {
+    "id": 7,
+    "nama": "Cerier CO-TREX TENGGARONG",
+    "keterangan":"Kapasitas 60Liter, Include Raincover",
+    "harga": 20000,
+    "gambar": "https://akbarbtg445.github.io/Alat-yang-disewakan/Syaratketentuan.png"
+  }
+]

@@ -1,0 +1,290 @@
+/* =========================================
+   1. GLOBAL SETTINGS
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    /* Efek Pola Titik */
+    background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+    background-size: 25px 25px;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px; /* Memberi ruang agar navbar pill tidak mepet layar */
+}
+
+
+/* =========================================
+   2. NAVBAR CUSTOM (PILL-SHAPE) - UPDATED
+   ========================================= */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 60px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 1200px;
+    
+    /* Tambahkan Kode di Bawah Ini */
+    position: sticky;      /* Membuat navbar menempel */
+    top: 20px;            /* Memberikan jarak dari atas layar saat melayang */
+    z-index: 1000;         /* Memastikan navbar di atas elemen lain */
+    margin: 0 auto 20px;   /* Margin otomatis ke tengah dan jarak bawah */
+}
+
+.nav-logo img {
+    height: 40px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #4a5568; 
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ed8805;
+}
+
+.text-stack {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    font-size: 12px;
+    text-align: left;
+}
+
+/* =========================================
+   3. CONTENT LAYOUT (LOKASI / INFO)
+   ========================================= */
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.text-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.text-section h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.text-section .highlight {
+    color: #f37021;
+    display: block;
+}
+
+.text-section p {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: justify;
+}
+
+/* =========================================
+   4. IMAGE SLIDER / MAPS SECTION
+   ========================================= */
+.image-section {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    background: #eee;
+}
+
+/* Agar Iframe Google Maps mengikuti border radius */
+.slider-container iframe {
+    width: 100%;
+    height: 350px; /* Atur tinggi agar proporsional */
+    display: block;
+    border: none;
+}
+
+/* Navigasi Slider & Dots */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.dots-container {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+.dot.active {
+    background: #fff;
+    width: 20px;
+    border-radius: 10px;
+}
+
+/* =========================================
+   5. RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 768px) {
+    .navbar {
+        border-radius: 20px;
+        flex-direction: column;
+        gap: 15px;
+        top: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .text-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .text-section p {
+        text-align: center;
+    }
+}
+/* Container utama slider */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    background: #fff;
+}
+
+/* Track untuk membungkus semua slide secara horizontal */
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+/* Masing-masing slide peta */
+.slide {
+    min-width: 100%;
+    height: 400px;
+}
+
+.slide iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Tombol Navigasi (Sama dengan desain Navbar Pill kamu) */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #333;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.nav-btn:hover { background: #ed8805; color: #fff; }
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* Dots Indikator */
+.dots-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #ed8805;
+    width: 25px;
+    border-radius: 10px;
+}
